@@ -1,0 +1,24 @@
+{
+  "name": "assist-plugin-system",
+  "version": "0.0.1",
+  "description": "The assist system build-in plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Val-istar-Guo/assist-plugin-system.git"
+  },
+  "keywords": [
+    "assist",
+    "system",
+    "plugin"
+  ],
+  "author": "Val-istar-Guo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Val-istar-Guo/assist-plugin-system/issues"
+  },
+  "homepage": "https://github.com/Val-istar-Guo/assist-plugin-system#readme"
+}
