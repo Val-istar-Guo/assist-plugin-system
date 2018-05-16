@@ -2,9 +2,17 @@
   "name": "assist-plugin-system",
   "version": "0.0.1",
   "description": "The assist system build-in plugin",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava",
+    "upgrade": "mili upgrade",
+    "clean": "rm -rf ./dist/*",
+    "prebuild": "npm run clean",
+    "build": "webpack",
+    "prebuild:prod": "npm run clean",
+    "build:prod": "NODE_ENV=production webpack",
+    "prepublishOnly": "npm test;npm run build:prod",
+    "precommit": "npm test"
   },
   "repository": {
     "type": "git",
@@ -20,5 +28,51 @@
   "bugs": {
     "url": "https://github.com/Val-istar-Guo/assist-plugin-system/issues"
   },
-  "homepage": "https://github.com/Val-istar-Guo/assist-plugin-system#readme"
+  "homepage": "https://github.com/Val-istar-Guo/assist-plugin-system#readme",
+  "engines": {
+    "node": ">=8.9.4"
+  },
+  "mili": {
+    "type": "component",
+    "encoding": "utf8"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ],
+    "sources": [
+      "src/**/*.js"
+    ],
+    "failFast": true,
+    "require": [
+      "babel-register"
+    ]
+  },
+  "devDependencies": {
+    "ava": "^1.0.0-beta.4",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "mili": "0.0.2-alpha.3",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.5",
+    "url-loader": "^1.0.1",
+    "vue": "^2.5.16",
+    "vue-loader": "^14.2.2",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "vuex": "^3.0.1",
+    "webpack": "^4.5.0",
+    "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-cli": "^2.0.14",
+    "webpack-merge": "^4.1.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {}
 }
