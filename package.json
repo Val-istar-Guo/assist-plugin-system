@@ -58,6 +58,7 @@
     "babel-register": "^6.26.0",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
+    "husky": "^0.14.3",
     "mili": "0.0.2-alpha.3",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
@@ -67,12 +68,14 @@
     "vue-loader": "^14.2.2",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
-    "vuex": "^3.0.1",
     "webpack": "^4.5.0",
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.14",
     "webpack-merge": "^4.1.2",
     "webpack-node-externals": "^1.7.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "peerDependencies": {
+    "vuex": "^3.0.1"
+  }
 }
