@@ -74,8 +74,5 @@
     "webpack-merge": "^4.1.2",
     "webpack-node-externals": "^1.7.2"
   },
-  "dependencies": {},
-  "peerDependencies": {
-    "vuex": "^3.0.1"
-  }
+  "dependencies": {}
 }
