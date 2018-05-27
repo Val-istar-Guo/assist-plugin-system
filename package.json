@@ -9,6 +9,7 @@
     "clean": "rm -rf ./dist/*",
     "prebuild": "npm run clean",
     "build": "webpack",
+    "watch": "webpack watch",
     "prebuild:prod": "npm run clean",
     "build:prod": "NODE_ENV=production webpack",
     "prepublishOnly": "npm test;npm run build:prod",
@@ -74,5 +75,11 @@
     "webpack-merge": "^4.1.2",
     "webpack-node-externals": "^1.7.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "postcss": {
+    "plugins": {
+      "postcss-import": {},
+      "postcss-cssnext": {}
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import { join } from 'path'
 
 
 const babelLoader = {
@@ -33,7 +33,7 @@ const urlLoader = {
 export default {
   entry: './src/index.js',
   output: {
-    path: resolve(__dirname, 'dist'),
+    path: join(__dirname, 'dist'),
     filename: 'bundle.js',
     library: 'assistPlugin',
     libraryTarget: 'jsonp',
@@ -58,5 +58,8 @@ export default {
         ],
       },
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.vue'],
   },
 }
