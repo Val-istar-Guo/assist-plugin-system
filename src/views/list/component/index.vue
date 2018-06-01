@@ -1,5 +1,5 @@
 <template lang="html">
-  <div>
+  <div class="container">
     <ul class="list">
       <li class="thing" v-for="thing in things" :key="thing.uuid">
         <div class="title">{{thing.title}}</div>
@@ -8,7 +8,7 @@
           :class="['important', thing.important ? 'checked' : '']"
           type="checkbox"
           @click="modiftThings([{ uuid: thing.uuid, name: 'important', value: !thing.important }])"
-        />
+        ><span class="icon" /></span>
       </li>
     </ul>
     <creator class="creator"/>
@@ -37,25 +37,36 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.container {
+  box-sizing: border-box;
+  padding-bottom: 120px;
+  height: 100%;
+}
+
 .list {
   margin: 0;
   padding: 0;
+  height: 100%;
+
+  overflow: auto;
 }
 .thing {
   position: relative;
   list-style: none;
   border-bottom: 1px solid #eeeeee;
-  padding: 16rem 30rem;
+  padding: 16px 30px;
 }
 
 .title {
-  font-size: 36rem;
+  font-size: 32px;
+  line-height: 45px;
   color: #333333;
 }
 .description {
-  font-size: 20rem;
+  font-size: 24px;
+  line-height: 33px;
   color: #999999;
-  padding-top: 4rem;
+  padding-top: 4px;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0;
@@ -64,21 +75,26 @@ export default {
 .important {
   position: absolute;
   top: 50%;
-  right: 30rem;
-  outline: none;
-  border: none;
-  border-radius: 50%;
-  width: 30rem;
-  height: 30rem;
-  /* margin: 20rem; */
+  right: 0;
   transform: translateY(-50%);
-  background: #f0f0f0;
-
+  padding: 30px;
   overflow:hidden;
 
-  &.checked {
+
+  & .icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #f0f0f0;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+  }
+
+  &.checked .icon {
     background: #cf6270;
   }
+
 }
 
 .creator {

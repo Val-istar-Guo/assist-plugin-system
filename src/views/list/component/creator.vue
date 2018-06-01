@@ -84,9 +84,9 @@ export default {
 .container {
   box-sizing: border-box;
   width: 100%;
-  height: 120rem;
-  padding: 0 30rem;
-  border-top: 1px solid #f5f5f5;
+  height: 120px;
+  padding: 0 30px;
+  border-top: 1px solid #e5e5e5;
   background: #fff;
 
   transition: height .2s ease-out;
@@ -98,9 +98,9 @@ export default {
 .placeholder {
   margin: 0;
   color: #e5e5e5;
-  font-size: 36rem;
-  line-height: 120rem;
-  height: 120rem;
+  font-size: 36px;
+  line-height: 120px;
+  height: 120px;
   font-weight: lighter;
   letter-spacing: 2px;
 
@@ -117,16 +117,16 @@ export default {
   opacity: 0;
   text-align: center;
   transition: opacity .2s linear, height .1s linear;
-  padding: 140rem 0 0 0;
+  padding: 140px 0 0 0;
 
   & .close {
     position: absolute;
-    top: 60rem;
-    right: 60rem;
+    top: 60px;
+    right: 60px;
   }
 
   & .input {
-    margin: 20rem 0;
+    margin: 20px 0;
   }
 
   @nest .active & {
