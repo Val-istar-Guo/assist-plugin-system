@@ -3,27 +3,24 @@
     <ul class="list">
       <li class="thing" v-for="thing in things" :key="thing.uuid">
         <div class="title">{{thing.title}}</div>
-        <div class="description">{{thing.description}}</div>
+        <div class="note">{{thing.note}}</div>
         <span
           :class="['important', thing.important ? 'checked' : '']"
           type="checkbox"
-          @click="modiftThings([{ uuid: thing.uuid, name: 'important', value: !thing.important }])"
+          @click="modiftThings([{ id: thing.id, important: !thing.important }])"
         ><span class="icon" /></span>
       </li>
     </ul>
-    <creator class="creator"/>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import creator from './creator'
 
 
 export default {
   initialData: async function ({ store, route }) {
   },
-  components: {creator},
   data: function () {
     return {
       title: '',
@@ -31,7 +28,7 @@ export default {
   },
   computed: mapGetters(['things']),
   methods: mapActions({
-    modiftThings: 'system.modifyThings',
+    modiftThings: 'system.data.things.modify',
   }),
 }
 </script>
@@ -39,7 +36,6 @@ export default {
 <style lang="postcss" scoped>
 .container {
   box-sizing: border-box;
-  padding-bottom: 120px;
   height: 100%;
 }
 
@@ -62,7 +58,7 @@ export default {
   line-height: 45px;
   color: #333333;
 }
-.description {
+.note {
   font-size: 24px;
   line-height: 33px;
   color: #999999;
@@ -79,7 +75,7 @@ export default {
   transform: translateY(-50%);
   padding: 30px;
   overflow:hidden;
-
+  -webkit-tap-highlight-color: transparent;
 
   & .icon {
     display: block;

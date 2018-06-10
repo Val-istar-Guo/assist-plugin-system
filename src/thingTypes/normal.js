@@ -16,15 +16,10 @@ const timeDetail = (propName, label) => ({
 
 
 export default {
-  type: 'system.normal',
-  name: 'normal',
+  name: 'system.normal',
+  displayName: '普通事务',
 
-  hooks: {
-    onCreate: identify,
-    onLoad: identify,
-    beforeDelete: identify,
-    onChange: identify,
-  },
+  hooks: {},
 
   fields: [
     timeDetail('deferUntil', '开始日期'),
